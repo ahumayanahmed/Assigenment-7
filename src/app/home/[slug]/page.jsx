@@ -1,5 +1,6 @@
 
 import Timelinepage from "@/app/timeline/page";
+import Timepage from "@/component/Timelinepage/Timepage";
 import Image from "next/image";
 import { FaHistory, FaPhone, FaVideo } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
@@ -12,6 +13,8 @@ const FriendDetails = async ({ params }) => {
     const data = await res.json();
     const frienddata = data.find((f) => f.id == slug);
 
+
+    
   const {
     id,
     name,
@@ -97,12 +100,13 @@ const FriendDetails = async ({ params }) => {
 
 <div className=" bg-white col-span-3 p-4 rounded-xl shadow">
   <h3 className="">Quick Check-In</h3>
- <div className="flex justify-between">
+ {/* <div className="flex justify-between">
    <div className="bg-base-200 w-40 h-20 rounded-2xl flex flex-col justify-center items-center"><FaPhone/> Call</div>
   
   <div className="bg-base-200 w-40 h-20 rounded-2xl flex flex-col justify-center items-center"><FaMessage/>Text </div>
   <div className="bg-base-200 w-40 h-20 rounded-2xl flex flex-col justify-center items-center"><FaVideo/> Video</div>
- </div>
+ </div> */}
+ <Timepage frienddata={frienddata}/>
 </div>
 
 <div className=" bg-white col-span-3 p-4 rounded-xl shadow">
@@ -122,7 +126,7 @@ const FriendDetails = async ({ params }) => {
 
         </div>
       </div>
-      <Timelinepage/>
+      
     </div>
 
   
