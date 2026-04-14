@@ -1,26 +1,45 @@
 "use client";
 import { TimelinePageContext } from '@/context/timeline.context';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Image from "next/image";
 const Timelinepage = () => {
     const {timepage,settimepage}=useContext(TimelinePageContext)
     console.log("tomepage",timepage)
+
+const [filter, setFilter] = useState("all");
+
+// filter data
+const filteredData = timepage.filter((item) => {
+    if (filter === "all") return true;
+    return item.type === filter;
+});
+
     return (
     <div className=" pt-5 bg-base-200 w-full">
         <div className='space-y w-[85%] mx-auto'>
         <h1 className='text-3xl font-bold'>Timeline</h1>
             <div className="dropdown dropdown-start">
-  <div tabIndex={0} role="button" className="btn m-1">Filter timeline ⬇️</div>
+
+  <div tabIndex={0} role="button" className="btn m-1">
+    {filter === "filtertimeline"
+      ? "Filter Timeline"
+      : filter === "call"
+      ? "Call"
+      : filter === "message"
+      ? "Message"
+      : "Filter Timeline"} ⬇️
+  </div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-    <li><a>Call</a></li>
-    <li><a>message</a></li>
-    <li><a>Video</a></li>
+     <li><a onClick={() => setFilter("filtertimeline")}>Filter Timeline</a></li>
+    <li><a onClick={() => setFilter("call")}>Call</a></li>
+    <li><a onClick={() => setFilter("message")}>Message</a></li>
+    <li><a onClick={() => setFilter("video")}>Video</a></li>
   </ul>
 </div>
     </div>
 
 <div className="space-y-4">
-      {timepage.map((item, index) => (
+      {filteredData.map((item, index) => (
         <div
           key={index}
           className="bg-base-100 p-4 rounded-xl shadow"

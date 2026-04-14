@@ -1,5 +1,6 @@
 
 import Timelinepage from "@/app/timeline/page";
+import History from "@/component/History/History";
 import Timepage from "@/component/Timelinepage/Timepage";
 import Image from "next/image";
 import { FaHistory, FaPhone, FaVideo } from "react-icons/fa";
@@ -110,10 +111,12 @@ const FriendDetails = async ({ params }) => {
 </div>
 
 <div className=" bg-white col-span-3 p-4 rounded-xl shadow">
-<div className="flex justify-between">
+{/* <div className="flex justify-between">
   <h1 className="text-2xl"> Recent Interactions</h1>
   <button className="btn"><FaHistory/> Ful History</button>
-</div>
+</div> */}
+
+<History/>
 
 <div>
 
