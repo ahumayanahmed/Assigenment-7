@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaPlus } from 'react-icons/fa';
 
-const Herosection = () => {
+const Herosection = ({friend}) => {
     return (
         <div className=' pt-40 pb-5 bg-base-200 text-center space-y-5'>
             <h1 className='text-6xl font-bold'>Friends to keep close in your life</h1>
@@ -14,7 +14,7 @@ relationships that matter most.</p>
 <div className="pt-10 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full">
 
   <div className="bg-white rounded-xl shadow p-6 text-center">
-    <h1 className="text-3xl font-bold text-[#244D3F]">10</h1>
+    <h1 className="text-3xl font-bold text-[#244D3F]">{friend.length}</h1>
     <p className="text-gray-500">Total Friends</p>
   </div>
 
