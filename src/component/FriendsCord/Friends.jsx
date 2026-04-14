@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const Friends = ({ item }) => {
   const {
+    id,
     name,
     picture,
     days_since_contact,
@@ -9,7 +11,7 @@ const Friends = ({ item }) => {
     tags,
   } = item;
 
-  // ✅ Status Style
+  //  Status Style
   const statusStyle = {
     "overdue": "bg-red-500 text-white",
     "almost due": "bg-orange-400 text-white",
@@ -17,6 +19,9 @@ const Friends = ({ item }) => {
   };
 
   return (
+
+<Link href={`/home/${id}`}>
+  <div className="cursor-pointer">
     <div className="bg-gray-100 rounded-2xl shadow-md p-6 text-center hover:shadow-xl transition duration-300 w-full">
       
       {/* Image */}
@@ -67,6 +72,8 @@ const Friends = ({ item }) => {
         </span>
       </div>
     </div>
+  </div>
+</Link>
   );
 };
 
