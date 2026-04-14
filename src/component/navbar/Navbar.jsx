@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FaChartPie, FaClock, FaHome } from 'react-icons/fa';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -22,19 +23,25 @@ const Navbar = () => {
 
             <li>
               <Link className={isActive("/")} href="/">
-                Home
+               <span className="flex gap-1 items-center">
+            <FaHome/> Home
+          </span>
               </Link>
             </li>
 
             <li>
               <Link className={isActive("/timeline")} href="/timeline">
-                Timeline
+                <span className="flex gap-1 items-center">
+            <FaClock/> Timeline
+          </span>
               </Link>
             </li>
 
             <li>
               <Link className={isActive("/stats")} href="/stats">
-                Stats
+                <span className="flex gap-1 items-center">
+            <FaChartPie/> Stats
+          </span>
               </Link>
             </li>
 
@@ -48,23 +55,28 @@ const Navbar = () => {
         <ul className="menu space-x-4 menu-horizontal px-10">
 
           <li>
-            <Link className={isActive("/")} href="/">
-              Home
-            </Link>
-          </li>
+              <Link className={isActive("/")} href="/">
+               <span className="flex gap-1 items-center">
+            <FaHome/> Home
+          </span>
+              </Link>
+            </li>
 
-          <li>
-            <Link className={isActive("/timeline")} href="/timeline">
-              Timeline
-            </Link>
-          </li>
+            <li>
+              <Link className={isActive("/timeline")} href="/timeline">
+                <span className="flex gap-1 items-center">
+            <FaClock/> Timeline 
+          </span>
+              </Link>
+            </li>
 
-          <li>
-            <Link className={isActive("/stats")} href="/stats">
-              Stats
-            </Link>
-          </li>
-
+            <li>
+              <Link className={isActive("/stats")} href="/stats">
+                <span className="flex gap-1 items-center">
+            <FaChartPie/> Stats
+          </span>
+              </Link>
+            </li>
         </ul>
       </div>
 
