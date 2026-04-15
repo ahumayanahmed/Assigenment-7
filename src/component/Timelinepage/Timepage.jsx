@@ -21,6 +21,7 @@ const Timepage = ({ frienddata }) => {
      toast.success(`${type.toUpperCase()} ADD SUSSESSFULY`);
 
   };
+  
 
   return (
     <div className="flex justify-between">

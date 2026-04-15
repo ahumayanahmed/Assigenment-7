@@ -57,6 +57,14 @@ const Statspage = () => {
     return null;
   };
 
+  if (timepage.length===0) {
+    return (
+      <div className="w-full h-40 flex justify-center items-center text-gray-500 text-xl">
+       No Data Found Stats Page
+      </div>
+    );
+  }
+
   return (
     <div className="p-10">
       <h1 className="text-4xl font-bold mb-6">Friendship Analytics</h1>

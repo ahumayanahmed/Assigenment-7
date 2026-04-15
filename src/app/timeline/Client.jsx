@@ -15,11 +15,20 @@ const filteredData = timepage.filter((item) => {
     return item.type === filter;
 });
 
+if (timepage.length===0) {
+    return (
+      <div className="w-full h-40 flex justify-center items-center text-gray-500 text-xl">
+       No Data Found Timeline Page
+      </div>
+    );
+  }
+
+
     return (
     <div className=" pt-5 bg-base-200 w-full">
         <div className='space-y w-[85%] mx-auto'>
         <h1 className='text-3xl font-bold'>Timeline</h1>
-            <div className="dropdown dropdown-start">
+            <div className="dropdown dropdown-start pt-5">
 
   <div tabIndex={0} role="button" className="btn m-1">
     {filter === "filtertimeline"
@@ -43,7 +52,7 @@ const filteredData = timepage.filter((item) => {
       {filteredData.map((item, index) => (
         <div
           key={index}
-          className="bg-base-100 p-4 rounded-xl shadow"
+          className="bg-base-100 p-4 mt-5 rounded-xl shadow"
         >
           {/* Left side */}
           <div className="flex  gap-3">
