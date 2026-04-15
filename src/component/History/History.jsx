@@ -5,7 +5,8 @@ import React, { useContext } from 'react';
 import { FaHistory } from 'react-icons/fa';
 import Image from "next/image";
 const History = () => {
-    const {timepage,settimepage}=useContext(TimelinePageContext)
+    const {timepage}=useContext(TimelinePageContext)
+    console.log("history", timepage)
     return (
   
 <div>

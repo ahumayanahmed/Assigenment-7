@@ -6,6 +6,19 @@ import Image from "next/image";
 import { FaHistory, FaPhone, FaVideo } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 
+
+export async function generateMetadata({params}){
+  const {slug}= await params;
+    
+    const res = await fetch("http://localhost:3000/friends.json")
+    const data = await res.json();
+    const frienddata = data.find((f) => f.id == slug);
+     return {
+    title: frienddata.name,
+    description: frienddata.bio,
+  }
+}
+
 const FriendDetails = async ({ params }) => {
 
     const {slug}= await params;
@@ -14,7 +27,7 @@ const FriendDetails = async ({ params }) => {
     const data = await res.json();
     const frienddata = data.find((f) => f.id == slug);
 
-
+     
     
   const {
     id,
