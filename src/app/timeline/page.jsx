@@ -4,7 +4,7 @@ export const metadata = {
 };
 
 import React from 'react';
-import Timelinepage from './Client';
+import Timelinepage from '../../component/Client';
 
 const page = () => {
   return (
