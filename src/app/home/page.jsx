@@ -7,9 +7,7 @@ export const metadata = {
 };
 
 const Homepage = async () => {
-  const res = await fetch("https://assigenment-7.vercel.app/friends.json", {
-    cache: "no-store",
-  });
+  const res = await fetch("https://assigenment-7.vercel.app/friends.json");
 
   const friend = await res.json();
 
