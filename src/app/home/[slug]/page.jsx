@@ -1,5 +1,3 @@
-
-
 import History from "@/component/History/History";
 import Timepage from "@/component/Timelinepage/Timepage";
 import Image from "next/image";
